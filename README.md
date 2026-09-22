@@ -1,4 +1,4 @@
-# Docent — Context-Aware AI Document Assistant
+# Docent — Context-Aware AI Document Assistant 
 
 Upload a PDF or Markdown file. Ask it questions. Get answers grounded only
 in that document, with a citation you can click to jump straight to the
