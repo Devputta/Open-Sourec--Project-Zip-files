@@ -1,4 +1,5 @@
-# Done Projects
+# Done Projects 
+![Vibe Coding](https://img.shields.io/badge/Vibe%20Coding-Project-8A2BE2?style=flat-square)
 
 A collection of completed AI, software, and full-stack projects.
 
