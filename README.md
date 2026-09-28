@@ -1,4 +1,4 @@
-# 🚀 Done Projects
+# Done Projects
 
 A collection of completed AI, software, and full-stack projects.
 
@@ -6,16 +6,17 @@ Each project contains its own documentation, architecture diagrams, setup instru
 
 ---
 
-## 📚 Projects
+## Projects
 
-| Project | Description | Status |
-|---|---|---|
-| 📄 **[Context-Aware AI Document Assistant](#-context-aware-ai-document-assistant)** | AI document assistant using RAG, citations, FastAPI and Next.js | ✅ Completed |
-| 🔥 **[AI Roast Battle](#-ai-roast-battle)** | Interactive AI-powered roast battle game | ✅ Completed |
+| Project                                                                         | Description                                                                                                        | Status    |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ | --------- |
+| **[Context-Aware AI Document Assistant](#context-aware-ai-document-assistant)** | AI document assistant using RAG, citations, FastAPI and Next.js                                                    | Completed |
+| **[AI Roast Battle](#ai-roast-battle)**                                         | Interactive AI-powered roast battle game                                                                           | Completed |
+| **[OURO — Snake Game](#ouro--snake-game)**                                      | Responsive Snake game with progressive difficulty, local records, themes, skins, sound effects and mobile controls | Completed |
 
 ---
 
-# 📄 Context-Aware AI Document Assistant
+# Context-Aware AI Document Assistant
 
 > **Upload → Retrieve → Ask → Cite**
 
@@ -23,50 +24,44 @@ A context-aware AI document assistant that allows users to upload PDF or Markdow
 
 Answers include citations that allow users to navigate back to the relevant page or section.
 
----
-
-## 🎯 Problem Statement
+## Problem Statement
 
 Generic AI chatbots can:
 
-- Lose document page references
-- Mix outside knowledge with the uploaded document
-- Provide answers that are difficult to verify
-- Give answers that are not actually contained in the document
+* Lose document page references
+* Mix outside knowledge with the uploaded document
+* Provide answers that are difficult to verify
+* Give answers that are not actually contained in the document
 
 This project is designed to keep the AI focused on the uploaded document.
 
 If the document does not contain enough information to answer a question, the system can respond accordingly instead of silently relying on unrelated information.
 
----
+## Features
 
-## ✨ Features
+* PDF and Markdown document upload
+* Document-grounded question answering
+* Page and section citations
+* Clickable citations
+* Streaming AI responses
+* Email/password authentication
+* Google OAuth
+* Retrieval-Augmented Generation (RAG)
+* ChromaDB vector storage
+* SQLite metadata storage
+* Docker support
+* Prompt-injection-aware retrieval
+* Responsive document and chat interface
+* Persistent conversation history
+* Document management
+* Storage dashboard
 
-- 📄 PDF and Markdown document upload
-- 🔍 Document-grounded question answering
-- 📑 Page and section citations
-- 🔗 Clickable citations
-- 💬 Streaming AI responses
-- 🔐 Email/password authentication
-- 🔑 Google OAuth
-- 🧠 Retrieval-Augmented Generation (RAG)
-- 🗄️ ChromaDB vector storage
-- 💾 SQLite metadata storage
-- 🐳 Docker support
-- 🛡️ Prompt-injection-aware retrieval
-- 📱 Responsive document and chat interface
-- 💬 Persistent conversation history
-- ⚙️ Document management
-- 📊 Storage dashboard
-
----
-
-# 🏗️ Architecture
+## Architecture
 
 ```mermaid
 flowchart TB
 
-    User[👤 User]
+    User[User]
 
     subgraph Frontend
         UI[Next.js UI]
@@ -100,14 +95,12 @@ flowchart TB
     RAG --> LLM
 ```
 
----
-
-# 🔎 RAG Workflow
+## RAG Workflow
 
 ```mermaid
 flowchart LR
 
-    A[📄 PDF / Markdown]
+    A[PDF / Markdown]
     B[Text Extraction]
     C[Chunking]
     D[Embeddings]
@@ -136,26 +129,22 @@ flowchart LR
     ANS --> CIT
 ```
 
----
+## Technology Stack
 
-## 🛠️ Technology Stack
+| Layer            | Technology                           |
+| ---------------- | ------------------------------------ |
+| Frontend         | Next.js, React, TypeScript, Tailwind |
+| Backend          | Python, FastAPI                      |
+| RAG              | LangChain                            |
+| Vector Database  | ChromaDB                             |
+| Database         | SQLite                               |
+| Authentication   | JWT, bcrypt, Google OAuth            |
+| AI               | OpenAI / Anthropic                   |
+| PDF Rendering    | react-pdf                            |
+| Markdown         | react-markdown                       |
+| Containerization | Docker                               |
 
-| Layer | Technology |
-|---|---|
-| Frontend | Next.js, React, TypeScript, Tailwind |
-| Backend | Python, FastAPI |
-| RAG | LangChain |
-| Vector Database | ChromaDB |
-| Database | SQLite |
-| Authentication | JWT, bcrypt, Google OAuth |
-| AI | OpenAI / Anthropic |
-| PDF Rendering | react-pdf |
-| Markdown | react-markdown |
-| Containerization | Docker |
-
----
-
-## 📁 Project Structure
+## Project Structure
 
 ```text
 context-aware-doc-assistant/
@@ -183,19 +172,13 @@ context-aware-doc-assistant/
 └── INSTALL.md
 ```
 
----
+## Installation
 
-## ⚙️ Installation
+See `INSTALL.md`.
 
-See:
-
-👉 **[INSTALL.md](./INSTALL.md)**
-
-Basic setup:
+### Backend
 
 ```bash
-# Backend
-
 cd backend
 
 python3 -m venv .venv
@@ -209,11 +192,11 @@ cp .env.example .env
 uvicorn app.main:app --reload --port 8000
 ```
 
-Then open another terminal:
+### Frontend
+
+Open another terminal:
 
 ```bash
-# Frontend
-
 cd doc-assistant
 
 npm install
@@ -229,9 +212,7 @@ Open:
 http://localhost:3000
 ```
 
----
-
-## 🐳 Docker
+## Docker
 
 ```bash
 cp .env.example .env
@@ -241,37 +222,31 @@ docker compose up --build
 
 The Docker setup runs the frontend, backend, and ChromaDB services.
 
----
-
-## 🔐 Security
+## Security
 
 The project includes:
 
-- Per-user document isolation
-- JWT authentication
-- Server-side API proxy
-- Prompt-injection-aware retrieval
-- Upload size limits
-- Filename sanitization
-- Sanitized Markdown rendering
-- Safe error handling
-- Rate-limiting scaffolding
+* Per-user document isolation
+* JWT authentication
+* Server-side API proxy
+* Prompt-injection-aware retrieval
+* Upload size limits
+* Filename sanitization
+* Sanitized Markdown rendering
+* Safe error handling
+* Rate-limiting scaffolding
+
+## Project Download
+
+**Full Project**
+
+[Download Context-Aware AI Document Assistant](./context-aware-doc-assistant-day1-7.zip)
+
+[INSTALL.md](./INSTALL.md)
 
 ---
 
-## 📦 Project Download
-
-### Full Project
-
-📥 **[Download Context-Aware AI Document Assistant](./context-aware-doc-assistant-day1-7.zip)**
-
-### Installation Guide
-
-📘 **[INSTALL.md](./INSTALL.md)**
-
----
-
-# 🔥 AI Roast Battle
+# AI Roast Battle
 
 > **Can you roast the AI better than it can roast you?**
 
@@ -279,9 +254,7 @@ AI Roast Battle is an interactive browser game where the AI roasts the player an
 
 The AI then evaluates the player's comeback.
 
----
-
-## 🎮 How It Works
+## How It Works
 
 ```mermaid
 flowchart LR
@@ -304,64 +277,58 @@ flowchart LR
     G --> H
 ```
 
----
-
-# ⚔️ Battle Flow
+## Battle Flow
 
 ```text
 START
-  │
-  ▼
+  |
+  v
 Choose Battle
-  │
-  ▼
+  |
+  v
 Give the AI something to roast
-  │
-  ▼
+  |
+  v
 AI ROASTS YOU
-  │
-  ▼
+  |
+  v
 Your Turn
-  │
-  ▼
+  |
+  v
 30 Second Countdown
-  │
-  ▼
+  |
+  v
 Write Your Comeback
-  │
-  ▼
+  |
+  v
 AI JUDGES
-  │
-  ├── Creativity
-  ├── Comedy
-  └── Damage
-  │
-  ▼
+  |
+  +-- Creativity
+  +-- Comedy
+  +-- Damage
+  |
+  v
 FINAL RESULT
 ```
 
----
+## Features
 
-## ✨ Features
+* AI-generated roasts
+* Timed comeback rounds
+* Different heat levels
+* Multiple game modes
+* AI judging
+* Round results
+* Safety handling
+* Game-focused interface
+* Resilience and fallback handling
 
-- 🤖 AI-generated roasts
-- ⏱️ Timed comeback rounds
-- 🔥 Different heat levels
-- 🎮 Multiple game modes
-- 🧠 AI judging
-- 📊 Round results
-- 🛡️ Safety handling
-- 🎨 Game-focused interface
-- 🔄 Resilience/fallback handling
-
----
-
-# 🏗️ Architecture
+## Architecture
 
 ```mermaid
 flowchart TB
 
-    Player[👤 Player]
+    Player[Player]
 
     subgraph Browser
         UI[React UI]
@@ -389,39 +356,41 @@ flowchart TB
     Result --> Player
 ```
 
----
-
-# 🧩 Technology
+## Technology
 
 ```text
 Frontend
-    ↓
+    |
+    v
 React + TypeScript
 
 Build
-    ↓
+    |
+    v
 Vite
 
 Backend
-    ↓
+    |
+    v
 TypeScript Server
 
 AI
-    ↓
+    |
+    v
 Gemini-compatible AI integration
 
 Styling
-    ↓
+    |
+    v
 CSS
 
 Development
-    ↓
+    |
+    v
 Bun / npm
 ```
 
----
-
-## 📁 Project Structure
+## Project Structure
 
 ```text
 AI-Roast-Battle/
@@ -460,9 +429,7 @@ AI-Roast-Battle/
 └── .env.example
 ```
 
----
-
-# 🔄 AI Battle Architecture
+## AI Battle Architecture
 
 ```mermaid
 sequenceDiagram
@@ -490,17 +457,185 @@ sequenceDiagram
     API-->>UI: Display result
 ```
 
----
+## Project Download
 
-# 📦 Project Download
+**Full Project**
 
-### Full Project
-
-🔥 **[Download AI Roast Battle](./remix-ai-roast-battle.zip)**
+[Download AI Roast Battle](./remix-ai-roast-battle.zip)
 
 ---
 
-# 📚 Repository Structure
+# OURO — Snake Game
+
+> **Move → Grow → Survive → Beat Your Record**
+
+OURO is a responsive browser-based Snake game built with React, TypeScript, and Vite.
+
+The game combines classic Snake mechanics with progressive difficulty, local records, customizable themes and skins, sound effects, fullscreen support, and mobile controls.
+
+**Live Demo:**
+https://snake-seven-zeta.vercel.app/
+
+**GitHub:**
+https://github.com/Devputta/SNAKE---G
+
+## Features
+
+* Classic Snake gameplay
+* Progressive speed and difficulty
+* Snake self-collision detection
+* Score and length tracking
+* Local game records
+* Light and dark themes
+* Multiple snake and food skins
+* Keyboard controls
+* Mobile touch and swipe controls
+* Web Audio sound effects
+* Fullscreen mode
+* Responsive interface
+
+## Game Flow
+
+```mermaid
+flowchart LR
+
+    A[Start Game]
+    B[Move Snake]
+    C{Food Hit?}
+    D[Grow + Score]
+    E[Increase Difficulty]
+    F{Self Collision?}
+    G[Game Over]
+    H[Save Local Record]
+
+    A --> B
+    B --> C
+
+    C -->|Yes| D
+    D --> E
+    E --> B
+
+    C -->|No| F
+    F -->|No| B
+    F -->|Yes| G
+    G --> H
+```
+
+## Architecture
+
+```mermaid
+flowchart TB
+
+    Player[Player]
+
+    subgraph Application
+        UI[React UI]
+        Engine[Game Engine]
+        State[Game State]
+        Controls[Keyboard / Touch Controls]
+    end
+
+    subgraph Browser
+        Storage[LocalStorage]
+        Audio[Web Audio API]
+    end
+
+    Player --> UI
+    UI --> Engine
+    Controls --> Engine
+    Engine --> State
+    State --> UI
+    State --> Storage
+    Engine --> Audio
+```
+
+## Technology Stack
+
+| Layer      | Technology           |
+| ---------- | -------------------- |
+| Frontend   | React                |
+| Language   | TypeScript           |
+| Build Tool | Vite                 |
+| Styling    | Tailwind CSS         |
+| Icons      | Lucide React         |
+| Animation  | Motion               |
+| Audio      | Web Audio API        |
+| Storage    | Browser LocalStorage |
+| Deployment | Vercel               |
+
+## Controls
+
+| Action          | Control              |
+| --------------- | -------------------- |
+| Move            | Arrow Keys / W A S D |
+| Pause / Menu    | P / Space            |
+| Restart         | R                    |
+| Fullscreen      | F                    |
+| Close Menu      | Esc                  |
+| Mobile Movement | Touch / Swipe        |
+
+## Project Structure
+
+```text
+OURO-Snake/
+│
+├── src/
+│   ├── components/
+│   ├── levels/
+│   ├── utils/
+│   └── ...
+│
+├── public/
+├── index.html
+├── package.json
+├── tsconfig.json
+├── vite.config.ts
+├── metadata.json
+├── .env.example
+└── README.md
+```
+
+## Installation
+
+```bash
+git clone https://github.com/Devputta/SNAKE---G.git
+
+cd SNAKE---G
+
+npm install
+
+npm run dev
+```
+
+Open:
+
+```text
+http://localhost:3000
+```
+
+Production build:
+
+```bash
+npm run build
+```
+
+## Data
+
+Game records and preferences are stored locally using the browser's `localStorage`.
+
+The game does not require user accounts or a server-side player profile.
+
+## Project Links
+
+**Live Demo:**
+https://snake-seven-zeta.vercel.app/
+
+**GitHub Repository:**
+https://github.com/Devputta/SNAKE---G
+
+---
+
+# Repository Structure
 
 ```text
 Done-Project-Zip-files/
@@ -510,56 +645,46 @@ Done-Project-Zip-files/
 │
 ├── context-aware-doc-assistant-day1-7.zip
 ├── remix-ai-roast-battle.zip
+├── OURO-Snake.zip
 │
 └── projects/
     │
     ├── context-aware-doc-assistant.md
-    └── ai-roast-battle.md
+    ├── ai-roast-battle.md
+    └── ouro-snake.md
 ```
 
 ---
 
-# 🚀 About This Repository
+# About This Repository
 
 This repository contains completed projects built for learning, experimentation, portfolio development, and open-source sharing.
 
-The goal is to document not only the final project but also the architecture, technologies, development process, and setup required to run it.
+The goal is to document not only the final project but also the architecture, technologies, development process, and setup required to run each project.
 
 ---
 
-# 🤝 Open Source
+# Open Source
 
 You are welcome to:
 
-- Fork the repository
-- Explore the projects
-- Study the source code
-- Run projects locally
-- Modify the projects
-- Improve the documentation
-- Submit pull requests
-- Use the projects for learning
-
-If you find something useful, consider giving the repository a ⭐.
+* Fork the repository
+* Explore the projects
+* Study the source code
+* Run projects locally
+* Modify the projects
+* Improve the documentation
+* Submit pull requests
+* Use the projects for learning
 
 ---
 
-# 👨‍💻 Author
+# Projects
 
-**Mahadevu M P**
-
-GitHub:  
-https://github.com/Devputta
-
----
-
-## 📌 Projects
-
-| Project | Documentation | Download |
-|---|---|---|
-| 📄 Context-Aware AI Document Assistant | [View Project](#-context-aware-ai-document-assistant) | [ZIP](./context-aware-doc-assistant-day1-7.zip) |
-| 🔥 AI Roast Battle | [View Project](#-ai-roast-battle) | [ZIP](./remix-ai-roast-battle.zip) |
+| Project                             | Documentation                                        | Download                                        |
+| ----------------------------------- | ---------------------------------------------------- | ----------------------------------------------- |
+| Context-Aware AI Document Assistant | [View Project](#context-aware-ai-document-assistant) | [ZIP](./context-aware-doc-assistant-day1-7.zip) |
+| AI Roast Battle                     | [View Project](#ai-roast-battle)                     | [ZIP](./remix-ai-roast-battle.zip)              |
+| OURO — Snake Game                   | [View Project](#ouro--snake-game)                    | [ZIP](./OURO-Snake.zip)                         |
 
 ---
-
-> **Build. Learn. Document. Share.**
