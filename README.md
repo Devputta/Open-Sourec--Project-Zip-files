@@ -14,6 +14,7 @@ Each project contains its own documentation, architecture diagrams, setup instru
 | **[Context-Aware AI Document Assistant](#context-aware-ai-document-assistant)** | AI document assistant using RAG, citations, FastAPI and Next.js                                                    | Completed |
 | **[AI Roast Battle](#ai-roast-battle)**                                         | Interactive AI-powered roast battle game                                                                           | Completed |
 | **[OURO — Snake Game](#ouro--snake-game)**                                      | Responsive Snake game with progressive difficulty, local records, themes, skins, sound effects and mobile controls | Completed |
+| **[✨ DataLens](#-datalens)**                                                   | Modern analytics dashboard for exploring datasets, visualizing trends, and creating shareable reports               | Completed |
 
 ---
 
@@ -636,6 +637,170 @@ https://github.com/Devputta/SNAKE---G
 
 ---
 
+
+# ✨ DataLens
+
+> **Turn raw data into clear, interactive insights.**
+
+**A modern analytics dashboard for exploring datasets, visualizing trends, and creating shareable reports.**
+
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](./LICENSE)
+[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-Ready-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Vite](https://img.shields.io/badge/Built%20with-Vite-646CFF?logo=vite&logoColor=white)](https://vite.dev/)
+
+---
+
+## Overview
+
+DataLens is a browser-based analytics and data-visualization workspace. It provides an interactive dashboard for inspecting datasets, tracking key metrics, customizing charts, and exporting reports.
+
+The app includes sample SaaS revenue data so the dashboard can be explored immediately, along with tools for loading data and working with dashboard views.
+
+## Features
+
+- **Interactive dashboard** — KPI cards and responsive charts generated from the active dataset.
+- **Dataset exploration** — inspect records in a table and work with supported uploaded data.
+- **Filtering** — search records and refine views with available filters.
+- **Data quality profiling** — review dataset structure and data-quality insights.
+- **Chart customization** — adjust chart presentation and manage the dashboard layout.
+- **Saved dashboard snapshots** — save and restore named layout configurations in the browser.
+- **Automated reports and exports** — create report outputs and export dashboard data or visuals using the available app tools.
+- **Theme and currency settings** — customize the display.
+- **Live demo data mode** — simulate incoming records to see dashboard metrics update.
+
+> DataLens is an analytics and visualization interface, not a substitute for validating business-critical data or decisions.
+
+## Preview
+
+Add a screenshot or demo GIF here when available:
+
+```text
+docs/images/datalens-preview.png
+```
+
+## Tech Stack
+
+- React 19
+- TypeScript
+- Vite
+- Tailwind CSS
+- Motion
+- Lucide React
+- XLSX
+- jsPDF
+- Gemini integration dependency for AI-backed functionality when configured
+
+## Getting Started
+
+### Requirements
+
+- Node.js — current LTS release recommended
+- npm
+
+### 1. Get the project
+
+```bash
+git clone <YOUR_REPOSITORY_URL>
+cd <YOUR_PROJECT_DIRECTORY>
+```
+
+Or download the project ZIP from the link below.
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Configure environment variables
+
+Copy `.env.example` to `.env.local`.
+
+**Windows Command Prompt:**
+
+```cmd
+copy .env.example .env.local
+```
+
+**PowerShell:**
+
+```powershell
+Copy-Item .env.example .env.local
+```
+
+**macOS / Linux:**
+
+```bash
+cp .env.example .env.local
+```
+
+Set `GEMINI_API_KEY` only if the AI-backed functionality requires it. Keep real credentials private and never commit `.env.local`.
+
+### 4. Start the development server
+
+```bash
+npm run dev
+```
+
+Open the local URL printed by Vite in the terminal.
+
+### 5. Production build
+
+```bash
+npm run build
+```
+
+Preview the production build:
+
+```bash
+npm run preview
+```
+
+Run the project checks:
+
+```bash
+npm run lint
+```
+
+## Deployment
+
+DataLens is a Vite frontend and can be deployed to static hosting platforms such as Vercel, Netlify, or Cloudflare Pages.
+
+Typical build settings:
+
+| Setting | Value |
+|---|---|
+| Build command | `npm run build` |
+| Output directory | `dist` |
+
+If a feature requires a secret API key, do not expose the secret in a public client-side environment variable. Use a trusted server-side endpoint or secure hosting configuration.
+
+## Data and Privacy
+
+- Use sample or non-sensitive data while evaluating the app.
+- Review the application's data-processing and hosting configuration before uploading confidential data.
+- Browser storage may be used for saved dashboard snapshots.
+- Never commit datasets, credentials, access tokens, or private exports to source control.
+
+## Security
+
+See the project's `SECURITY.md` for vulnerability reporting guidance.
+
+## Project Download
+
+**Full Project**
+
+[📦 Download DataLens ZIP](./datalens.zip)
+
+## Project Status
+
+**Status:** ✅ Completed
+
+DataLens was built as a practical analytics and visualization project focused on turning raw datasets into interactive, understandable dashboard insights.
+
+---
+
 # Repository Structure
 
 ```text
@@ -647,6 +812,7 @@ Done-Project-Zip-files/
 ├── context-aware-doc-assistant-day1-7.zip
 ├── remix-ai-roast-battle.zip
 ├── OURO-Snake.zip
+├── datalens.zip
 │
 └── projects/
     │
@@ -687,5 +853,6 @@ You are welcome to:
 | Context-Aware AI Document Assistant | [View Project](#context-aware-ai-document-assistant) | [ZIP](./context-aware-doc-assistant-day1-7.zip) |
 | AI Roast Battle                     | [View Project](#ai-roast-battle)                     | [ZIP](./remix-ai-roast-battle.zip)              |
 | OURO — Snake Game                   | [View Project](#ouro--snake-game)                    | [ZIP](./OURO-Snake.zip)                         |
+| ✨ DataLens                         | [View Project](#-datalens)                          | [ZIP](./datalens.zip)                           |
 
 ---
