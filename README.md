@@ -1079,8 +1079,8 @@ You are welcome to:
 | ----------------------------------- | ---------------------------------------------------- | ----------------------------------------------- |
 | Context-Aware AI Document Assistant | [View Project](#context-aware-ai-document-assistant) | [ZIP](./context-aware-doc-assistant-day1-7.zip) |
 | AI Roast Battle                     | [View Project](#ai-roast-battle)                     | [ZIP](./remix-ai-roast-battle.zip)              |
-| OURO — Snake Game                   | [View Project](#ouro--snake-game)                    | [ZIP](./OURO-Snake.zip)                         |
+| OURO — Snake Game                   | [View Project](#ouro--snake-game)                    | [ZIP](./oura---zen-snake.zip)                         |
 | ✨ DataLens                         | [View Project](#-datalens)                          | [ZIP](./datalens.zip)                           |
-| DiagramLab                          | [View Project](#diagramlab)                         | [ZIP](./diagramlab.zip)                         |
+| DiagramLab                          | [View Project](#diagramlab)                         | [ZIP](./DiagramLab-Render-Ready.zip)                         |
 
 ---
