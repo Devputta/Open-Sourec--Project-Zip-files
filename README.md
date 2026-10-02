@@ -15,6 +15,7 @@ Each project contains its own documentation, architecture diagrams, setup instru
 | **[AI Roast Battle](#ai-roast-battle)**                                         | Interactive AI-powered roast battle game                                                                           | Completed |
 | **[OURO — Snake Game](#ouro--snake-game)**                                      | Responsive Snake game with progressive difficulty, local records, themes, skins, sound effects and mobile controls | Completed |
 | **[✨ DataLens](#-datalens)**                                                   | Modern analytics dashboard for exploring datasets, visualizing trends, and creating shareable reports               | Completed |
+| **[DiagramLab](#diagramlab)**                                                   | Browser-based technical diagram workspace with templates, project organization, exports, and AI-assisted generation | Completed |
 
 ---
 
@@ -799,6 +800,232 @@ See the project's `SECURITY.md` for vulnerability reporting guidance.
 
 DataLens was built as a practical analytics and visualization project focused on turning raw datasets into interactive, understandable dashboard insights.
 
+
+---
+
+# DiagramLab
+
+> **Create. Structure. Visualize.**
+
+DiagramLab is a browser-based technical diagram workspace for creating clear, editable, and structured visual documentation.
+
+It combines interactive diagram editing, reusable templates, project organization, export workflows, browser persistence, and optional AI-assisted diagram generation in a single workspace.
+
+**GitHub:**
+https://github.com/Devputta/DiagramLab
+
+**Live Demo:**
+https://diagramlab.onrender.com/
+
+## Features
+
+* Interactive diagram canvas
+* Editable nodes and connectors
+* Software and system architecture diagrams
+* Flowcharts and process diagrams
+* UML-style diagrams
+* Database schemas
+* Service and infrastructure diagrams
+* Reusable diagram templates
+* Browser-based project management
+* Diagram export workflows
+* Light and dark themes
+* Local browser persistence
+* AI-assisted diagram generation with Google Gemini
+* Local fallback diagram synthesis
+* Structured diagram validation
+* Server-side AI credential handling
+* Request validation and rate limiting
+* Security response controls
+
+## Key Workflow
+
+```mermaid
+flowchart LR
+
+    A[Describe] --> B[Generate]
+    B --> C[Edit]
+    C --> D[Organize]
+    D --> E[Validate]
+    E --> F[Export]
+```
+
+**Describe → Generate → Edit → Organize → Validate → Export**
+
+## AI Diagram Generation
+
+DiagramLab can convert a natural-language system description into structured diagram data.
+
+```mermaid
+sequenceDiagram
+
+    participant U as User
+    participant UI as DiagramLab UI
+    participant API as Express API
+    participant AI as Gemini
+    participant C as Canvas
+
+    U->>UI: Describe system
+    UI->>API: Submit diagram request
+    API->>AI: Generate structured diagram
+    AI-->>API: Nodes and relationships
+    API-->>UI: Validated diagram
+    UI->>C: Render editable diagram
+    U->>C: Modify diagram
+```
+
+The generated result remains editable because the AI produces structured diagram data rather than a static image.
+
+## Architecture
+
+```mermaid
+flowchart TB
+
+    subgraph Client["Browser"]
+        UI["React Application"]
+        Canvas["Diagram Canvas"]
+        Projects["Project Workspace"]
+        Templates["Template System"]
+        Storage["Browser Storage"]
+    end
+
+    subgraph Server["Application Server"]
+        Express["Express Server"]
+        Health["Health API"]
+        AIEndpoint["AI Diagram API"]
+        Validation["Request & Output Validation"]
+        Security["Security Controls"]
+    end
+
+    subgraph External["External Service"]
+        Gemini["Google Gemini API"]
+    end
+
+    UI --> Canvas
+    UI --> Projects
+    UI --> Templates
+    Projects --> Storage
+
+    UI --> Express
+    Express --> Health
+    Express --> AIEndpoint
+    AIEndpoint --> Validation
+    Validation --> Security
+    Security --> Gemini
+    Gemini --> Security
+    Security --> Validation
+    Validation --> AIEndpoint
+    AIEndpoint --> UI
+```
+
+## Technology Stack
+
+| Layer | Technology |
+| --- | --- |
+| Frontend | React 19 |
+| Language | TypeScript |
+| Build Tool | Vite |
+| Styling | Tailwind CSS |
+| Icons | Lucide React |
+| Animation | Motion |
+| Backend | Node.js |
+| API Layer | Express |
+| AI Integration | Google Gemini |
+| Client Persistence | Browser Local Storage |
+| Deployment | Render |
+
+## Security
+
+DiagramLab separates browser functionality from server-side AI communication.
+
+Security controls include:
+
+* Server-side API credential handling
+* Request validation
+* Request body-size limits
+* Prompt length restrictions
+* Input sanitization
+* AI endpoint rate limiting
+* Generated diagram validation
+* Diagram relationship validation
+* Output field limits
+* Security response headers
+* Reduced server information exposure
+
+The AI provider credential is kept on the server rather than embedded in the browser application.
+
+## Project Structure
+
+```text
+DiagramLab/
+│
+├── src/
+│   ├── components/
+│   ├── lib/
+│   ├── shapes/
+│   ├── templates/
+│   ├── types/
+│   ├── App.tsx
+│   └── main.tsx
+│
+├── server.ts
+├── index.html
+├── metadata.json
+├── package.json
+├── tsconfig.json
+├── vite.config.ts
+├── .env.example
+├── .gitignore
+├── render.yaml
+├── SECURITY.md
+├── LICENSE
+└── README.md
+```
+
+## Installation
+
+```bash
+git clone https://github.com/Devputta/DiagramLab.git
+
+cd DiagramLab
+
+npm install
+```
+
+Create the environment file:
+
+```bash
+cp .env.example .env
+```
+
+Add the required Gemini API credential to the environment file if AI generation is enabled.
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+## Deployment
+
+DiagramLab is configured as a web service and includes a `render.yaml` deployment configuration.
+
+The project can be deployed to Render with the required environment variables configured on the server.
+
+## Project Links
+
+**Live Demo:**
+https://diagramlab.onrender.com/
+
+**GitHub Repository:**
+https://github.com/Devputta/DiagramLab
+
+## Project Status
+
+**Status:** ✅ Completed
+
+DiagramLab was built as a practical technical documentation and visualization workspace focused on creating structured, editable diagrams directly in the browser.
+
 ---
 
 # Repository Structure
@@ -854,5 +1081,6 @@ You are welcome to:
 | AI Roast Battle                     | [View Project](#ai-roast-battle)                     | [ZIP](./remix-ai-roast-battle.zip)              |
 | OURO — Snake Game                   | [View Project](#ouro--snake-game)                    | [ZIP](./OURO-Snake.zip)                         |
 | ✨ DataLens                         | [View Project](#-datalens)                          | [ZIP](./datalens.zip)                           |
+| DiagramLab                          | [View Project](#diagramlab)                         | [ZIP](./diagramlab.zip)                         |
 
 ---
