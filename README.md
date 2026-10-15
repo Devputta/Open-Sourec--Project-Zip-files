@@ -16,6 +16,7 @@ Each project contains its own documentation, architecture diagrams, setup instru
 | **[OURO — Snake Game](#ouro--snake-game)**                                      | Responsive Snake game with progressive difficulty, local records, themes, skins, sound effects and mobile controls | Completed |
 | **[✨ DataLens](#-datalens)**                                                   | Modern analytics dashboard for exploring datasets, visualizing trends, and creating shareable reports               | Completed |
 | **[DiagramLab](#diagramlab)**                                                   | Browser-based technical diagram workspace with templates, project organization, exports, and AI-assisted generation | Completed |
+| **[BlockFall](#blockfall--web-falling-block-puzzle-game)** | Browser-based falling-block puzzle game with a TypeScript game engine, SRS rotation, responsive controls, and progressive levels | Completed |
 
 ---
 
@@ -1028,6 +1029,97 @@ DiagramLab was built as a practical technical documentation and visualization wo
 
 ---
 
+
+---
+
+# BlockFall — Web Falling-Block Puzzle Game
+
+> **Build. Play. Clear. Repeat.**
+
+BlockFall is a browser-based falling-block puzzle game built with React 19, TypeScript, and Vite. It uses a lightweight game engine with canvas rendering and supports keyboard, mouse, and touch controls.
+
+**GitHub Repository:**  
+https://github.com/Devputta/BlockFall
+
+## Features
+
+- Independent TypeScript game engine
+- 7-bag tetromino randomizer
+- Super Rotation System (SRS), including wall kicks
+- Progressive gravity and 30+ levels
+- Line-clear scoring and level progression
+- Hold piece and next-piece queue
+- Ghost-piece preview, collision detection, and row clearing
+- Keyboard, mouse, swipe, and mobile touch controls
+- Canvas-based rendering with particle effects and screen shake
+- Web Audio API sound effects
+- Local persistence for settings and records
+- Responsive board sizing and fullscreen support
+- Defensive local-storage parsing and React error-boundary handling
+
+## Gameplay Flow
+
+```mermaid
+flowchart LR
+    A[Player Input] --> B[Controls]
+    B --> C[Game Engine]
+    C --> D[Collision and Rotation]
+    D --> E[Update Board]
+    E --> F{Rows Cleared?}
+    F -->|Yes| G[Score and Level Update]
+    F -->|No| H[Spawn or Continue]
+    G --> I[Effects]
+    I --> H
+    H --> J[Canvas Renderer]
+    J --> A
+```
+
+## Technology Stack
+
+| Layer | Technology |
+|---|---|
+| UI | React 19 |
+| Language | TypeScript 5.x |
+| Build Tool | Vite 8.x |
+| Rendering | HTML5 Canvas |
+| Audio | Web Audio API |
+| Persistence | Browser LocalStorage |
+| Testing | Headless TypeScript test runner |
+
+## Testing
+
+The supplied project README reports **12/12 tests passing**. The test suite covers core gameplay behavior, including piece generation, movement, collision, rotation, board behavior, row clearing, scoring, and game-state transitions.
+
+Test runner: `src/tests/runTests.ts`
+
+## Installation
+
+```bash
+git clone https://github.com/Devputta/BlockFall.git
+cd BlockFall
+npm install
+npm run dev
+```
+
+Run the production build with:
+
+```bash
+npm run build
+```
+
+Use the scripts defined in `package.json` for the exact available checks and test commands.
+
+## Security and Data
+
+BlockFall documents defensive handling for persisted browser data, numeric bounds validation, prototype-injection protection, and React error-boundary protection. It does not use `eval()` for gameplay execution. Review `SECURITY.md` for the project's security guidance.
+
+## Project Status
+
+**Status:** Completed
+
+BlockFall is included here as a completed open-source project for learning, experimentation, and further development. Contributions such as bug fixes, gameplay improvements, accessibility enhancements, and documentation updates are welcome.
+
+
 # Repository Structure
 
 ```text
@@ -1082,5 +1174,6 @@ You are welcome to:
 | OURO — Snake Game                   | [View Project](#ouro--snake-game)                    | [ZIP](./ouro---zen-snake.zip)                         |
 | ✨ DataLens                         | [View Project](#-datalens)                          | [ZIP](./datalens.zip)                           |
 | DiagramLab                          | [View Project](#diagramlab)                         | [ZIP](./DiagramLab-Render-Ready.zip)                         |
+| BlockFall                           | [View Project](#blockfall--web-falling-block-puzzle-game) | [GitHub Repository](https://github.com/Devputta/BlockFall) |
 
 ---
