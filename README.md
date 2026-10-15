@@ -1174,6 +1174,6 @@ You are welcome to:
 | OURO — Snake Game                   | [View Project](#ouro--snake-game)                    | [ZIP](./ouro---zen-snake.zip)                         |
 | ✨ DataLens                         | [View Project](#-datalens)                          | [ZIP](./datalens.zip)                           |
 | DiagramLab                          | [View Project](#diagramlab)                         | [ZIP](./DiagramLab-Render-Ready.zip)                         |
-| BlockFall                           | [View Project](#blockfall--web-falling-block-puzzle-game) | [GitHub Repository](https://github.com/Devputta/BlockFall) |
+| BlockFall                           | [View Project](#blockfall--web-falling-block-puzzle-game) | [ZIP](./BlockFall-main.zip) |
 
 ---
